@@ -68,3 +68,14 @@ chroma_data/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Ruff
+.ruff_cache/
+
+# PyPI configuration
+.pypirc
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/

@@ -77,8 +77,8 @@ ARIA is built on the **OpenAI Agents SDK** with **Claude models** (via LiteLLM) 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/dashboard.git
-   cd dashboard
+   git clone https://github.com/jagan08/Rag-conversation-model.git
+   cd Rag-conversation-model
    ```
 
 2. **Create virtual environment:**
