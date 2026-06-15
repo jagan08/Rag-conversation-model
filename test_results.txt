@@ -1,0 +1,121 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.1.0, pluggy-1.6.0 -- C:\Users\vmuser\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\vmuser\Desktop\Rag-converseation-model
+configfile: pytest.ini
+plugins: anyio-4.13.0, Faker-40.22.0, asyncio-1.4.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 31 items / 4 errors
+
+=================================== ERRORS ====================================
+_________ ERROR collecting tests/test_tools/test_location_matcher.py __________
+ImportError while importing test module 'C:\Users\vmuser\Desktop\Rag-converseation-model\tests\test_tools\test_location_matcher.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\python.py:508: in importtestmodule
+    mod = import_path(
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\pathlib.py:596: in import_path
+    importlib.import_module(module_name)
+..\..\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1398: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1371: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1342: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:938: in _load_unlocked
+    ???
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\assertion\rewrite.py:188: in exec_module
+    exec(co, module.__dict__)
+tests\test_tools\test_location_matcher.py:7: in <module>
+    from tools.location_matcher import normalize_location, batch_normalize_locations
+tools\location_matcher.py:9: in <module>
+    from agents import function_tool
+E   ModuleNotFoundError: No module named 'agents'
+_____________ ERROR collecting tests/test_tools/test_sql_query.py _____________
+ImportError while importing test module 'C:\Users\vmuser\Desktop\Rag-converseation-model\tests\test_tools\test_sql_query.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\python.py:508: in importtestmodule
+    mod = import_path(
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\pathlib.py:596: in import_path
+    importlib.import_module(module_name)
+..\..\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1398: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1371: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1342: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:938: in _load_unlocked
+    ???
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\assertion\rewrite.py:188: in exec_module
+    exec(co, module.__dict__)
+tests\test_tools\test_sql_query.py:7: in <module>
+    from tools.sql_query import search_employees, get_employee_by_id, aggregate_employees, update_employee_location
+tools\sql_query.py:9: in <module>
+    from agents import function_tool, RunContextWrapper
+E   ModuleNotFoundError: No module named 'agents'
+____________ ERROR collecting tests/test_tools/test_tavily_news.py ____________
+ImportError while importing test module 'C:\Users\vmuser\Desktop\Rag-converseation-model\tests\test_tools\test_tavily_news.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\python.py:508: in importtestmodule
+    mod = import_path(
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\pathlib.py:596: in import_path
+    importlib.import_module(module_name)
+..\..\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1398: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1371: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1342: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:938: in _load_unlocked
+    ???
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\assertion\rewrite.py:188: in exec_module
+    exec(co, module.__dict__)
+tests\test_tools\test_tavily_news.py:10: in <module>
+    from tools import tavily_news
+tools\tavily_news.py:11: in <module>
+    from agents import function_tool
+E   ModuleNotFoundError: No module named 'agents'
+__________ ERROR collecting tests/test_tools/test_tavily_weather.py ___________
+ImportError while importing test module 'C:\Users\vmuser\Desktop\Rag-converseation-model\tests\test_tools\test_tavily_weather.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\python.py:508: in importtestmodule
+    mod = import_path(
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\pathlib.py:596: in import_path
+    importlib.import_module(module_name)
+..\..\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1398: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1371: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1342: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:938: in _load_unlocked
+    ???
+..\..\AppData\Local\Programs\Python\Python314\Lib\site-packages\_pytest\assertion\rewrite.py:188: in exec_module
+    exec(co, module.__dict__)
+tests\test_tools\test_tavily_weather.py:10: in <module>
+    from tools import tavily_weather
+tools\tavily_weather.py:11: in <module>
+    from agents import function_tool
+E   ModuleNotFoundError: No module named 'agents'
+=========================== short test summary info ===========================
+ERROR tests/test_tools/test_location_matcher.py
+ERROR tests/test_tools/test_sql_query.py
+ERROR tests/test_tools/test_tavily_news.py
+ERROR tests/test_tools/test_tavily_weather.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!
+============================== 4 errors in 1.61s ==============================

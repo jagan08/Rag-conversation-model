@@ -137,8 +137,22 @@ The app will be available at `http://localhost:8501`
 - ✅ Phase 0: Core architecture
 - ✅ Phase 1: Agent implementation
 - ✅ Phase 2: UI & tool integration
-- 🔄 Phase 3: RAG retrieval (ChromaDB integration)
-- 🔄 Phase 4: Grounding critic & refinement
+- ✅ Phase 3: RAG retrieval (sqlite-vec integration)
+- ✅ Phase 4: Grounding critic & refinement
+
+### Completed Phases Overview
+
+**Phase 3: RAG Retrieval (sqlite-vec)** — Vector store for semantic search over historical weather, news, and employee queries
+- Collection management: weather_history, news_history, employee_context
+- Embedding pipeline via OpenAI text-embedding-3-small
+- Semantic similarity search with distance scoring
+- Auto-store results from live APIs for future reuse
+
+**Phase 4: Grounding Critic** — Independent verification agent that validates answers against evidence
+- Verdict levels: GROUNDED (≥0.80), PARTIAL (0.40-0.79), UNGROUNDED (<0.40)
+- Citation extraction and relevance scoring
+- TTL-aware validation (stale weather/news flagged as PARTIAL)
+- Structured output parsing with regex extraction
 
 ## Development
 

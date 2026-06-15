@@ -1,0 +1,1 @@
+"""ARIA project test suite."""

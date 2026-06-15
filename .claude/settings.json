@@ -1,0 +1,62 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const fs=require('fs'),path=require('path');const log={timestamp:new Date().toISOString(),hook:'PreToolUse',tool:'Bash',input:JSON.parse(process.env.TOOL_INPUT||'{}')};const f='C:/Users/vmuser/Desktop/Rag-converseation-model/.claude/logs/tool_calls.jsonl';fs.appendFileSync(f,JSON.stringify(log)+'\\n');\" 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const fs=require('fs');const log={timestamp:new Date().toISOString(),hook:'PreToolUse',tool:'Write',input:JSON.parse(process.env.TOOL_INPUT||'{}')};const f='C:/Users/vmuser/Desktop/Rag-converseation-model/.claude/logs/tool_calls.jsonl';fs.appendFileSync(f,JSON.stringify(log)+'\\n');\" 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const fs=require('fs');const log={timestamp:new Date().toISOString(),hook:'PreToolUse',tool:'Edit',input:JSON.parse(process.env.TOOL_INPUT||'{}')};const f='C:/Users/vmuser/Desktop/Rag-converseation-model/.claude/logs/tool_calls.jsonl';fs.appendFileSync(f,JSON.stringify(log)+'\\n');\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const fs=require('fs');const inp=JSON.parse(process.env.TOOL_INPUT||'{}');const log={timestamp:new Date().toISOString(),hook:'PostToolUse',tool:'Write',file:inp.file_path,bytes:(inp.content||'').length};const f='C:/Users/vmuser/Desktop/Rag-converseation-model/.claude/logs/audit.jsonl';fs.appendFileSync(f,JSON.stringify(log)+'\\n');\" 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const fs=require('fs');const inp=JSON.parse(process.env.TOOL_INPUT||'{}');const log={timestamp:new Date().toISOString(),hook:'PostToolUse',tool:'Edit',file:inp.file_path};const f='C:/Users/vmuser/Desktop/Rag-converseation-model/.claude/logs/audit.jsonl';fs.appendFileSync(f,JSON.stringify(log)+'\\n');\" 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const fs=require('fs');const inp=JSON.parse(process.env.TOOL_INPUT||'{}');if((inp.command||'').includes('uv add')){console.log('ARIA Installer: '+inp.command);}const log={timestamp:new Date().toISOString(),hook:'PostToolUse',tool:'Bash',command:(inp.command||'').substring(0,120)};const f='C:/Users/vmuser/Desktop/Rag-converseation-model/.claude/logs/audit.jsonl';fs.appendFileSync(f,JSON.stringify(log)+'\\n');\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
